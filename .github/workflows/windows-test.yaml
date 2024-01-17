@@ -13,10 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set branch name
-      id: set-branch
-      run: echo "::set-output name=branch_name::${GITHUB_REF#refs/heads/}"
-
     - name: Display branch name
-      run: echo "Branch name is ${{ github.ref_name }}"
+      run: |
+        echo "Branch name is ${{ github.ref_name }}"
+        echo "Branch name is ${{ github }}"
 

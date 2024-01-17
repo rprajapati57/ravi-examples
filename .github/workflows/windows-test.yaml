@@ -6,15 +6,16 @@ on:
       - '*'
 
 jobs:
-  get-branch-name:
+  build:
     runs-on: windows-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
+
     - name: Display branch name
       run: |
         echo "Branch name is ${{ github.ref_name }}"
-        echo "Branch name is ${{ github.sha }}"
+        echo "Branch name is ${{ github.sha[0:10] }}"
 

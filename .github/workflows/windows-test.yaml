@@ -16,5 +16,5 @@ jobs:
     - name: Display branch name
       run: |
         echo "Branch name is ${{ github.ref_name }}"
-        echo "Branch name is ${{ github }}"
+        echo "Branch name is ${{ github.sha }}"
 

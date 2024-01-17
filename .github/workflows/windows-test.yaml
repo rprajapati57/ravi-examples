@@ -18,5 +18,5 @@ jobs:
       run: echo "::set-output name=branch_name::${GITHUB_REF#refs/heads/}"
 
     - name: Display branch name
-      run: echo "Branch name is ${{ steps.set-branch.outputs.branch_name }}"
+      run: echo "Branch name is ${{ github.ref_name }}"
 

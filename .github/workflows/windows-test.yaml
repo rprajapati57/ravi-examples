@@ -14,8 +14,16 @@ jobs:
       uses: actions/checkout@v2
 
 
+    # - name: Set outputs
+    #   id: vars
+    #   run: |
+    #      echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+    # - name: Check outputs
+    #   run: echo ${{ steps.vars.outputs.sha_short }}
+
     - name: Display branch name
       run: |
         echo "Branch name is ${{ github.ref_name }}"
-        echo "Branch name is ${{ github.sha::10 }}"
+        echo "Branch name is ${{ github.sha }}".SubString(0, 10)
 

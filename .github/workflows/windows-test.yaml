@@ -1,0 +1,22 @@
+name: Get Branch Name
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  get-branch-name:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set branch name
+      id: set-branch
+      run: echo "::set-output name=branch_name::${GITHUB_REF#refs/heads/}"
+
+    - name: Display branch name
+      run: echo "Branch name is ${{ steps.set-branch.outputs.branch_name }}"
+
